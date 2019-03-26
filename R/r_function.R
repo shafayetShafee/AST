@@ -23,13 +23,10 @@ anova_rcbd= function(data){
   b = dim(data)[2]
 
   treat_totals = rowSums(data)
-  grand_totals = sum(data)
-
-  treat_totals = rowSums(data)
   block_totals = colSums(data)
   grand_totals = sum(data)
 
-  SST = sum(obs^2) - (grand_totals^2)/N
+  SST = sum(data^2) - (grand_totals^2)/N
   SS_treat = sum(treat_totals^2)/b - (grand_totals^2)/N
   SS_blocks = sum(block_totals^2)/a-(grand_totals^2)/N
   SS_error = SST - SS_treat - SS_blocks
@@ -40,7 +37,12 @@ anova_rcbd= function(data){
 
   F_ratio = MS_treat/MS_error
 
-  result = t(data.frame("SST"=SST, "SS_treat" = SS_treat, "SSB" = SS_blocks,
+  result = t(data.frame(grand"=sum(data),
+                         "Data_squared" = sum(data^2),
+                         "treatSquared_by_b"=(sum(treat_totals^2))/b,
+                         "blockSquared_by_a"=sum(block_totals^2)/a,
+                         "grandSquared_by_N" = (grand_totals^2)/N,
+                         "SST"=SST, "SS_treat" = SS_treat, "SSB" = SS_blocks,
                         "SSE" = SS_error,"MS_treatment" = MS_treat,
                         "MSE" = MS_error,"F_ratio" = F_ratio))
   colnames(result) = "values"
