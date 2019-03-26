@@ -37,7 +37,7 @@ anova_rcbd= function(data){
 
   F_ratio = MS_treat/MS_error
 
-  result = t(data.frame(grand"=sum(data),
+  result = t(data.frame("grand"=sum(data),
                          "Data_squared" = sum(data^2),
                          "treatSquared_by_b"=(sum(treat_totals^2))/b,
                          "blockSquared_by_a"=sum(block_totals^2)/a,
