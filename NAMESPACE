@@ -2,3 +2,4 @@
 
 export(anova_crd)
 export(anova_rcbd)
+export(t_test)
