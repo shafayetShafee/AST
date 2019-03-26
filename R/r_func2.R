@@ -14,7 +14,7 @@
 #' mat = matrix(obs, nrow = a, ncol = b, byrow = T)
 #' anova_crd(mat)
 
-anova_rd= function(data,info=c("anova","All")){
+anova_crd= function(data,info=c("anova","All")){
   
   N = dim(data)[1]*dim(data)[2]
   a = dim(data)[1]
