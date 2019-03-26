@@ -6,10 +6,10 @@
 anova_crd gets the anova table for given dataset whose treatments are given
 rowwise and replications will be columnwise}
 \usage{
-anova_crd(data)
+anova_crd(data, info = c("anova", "All"))
 }
 \arguments{
-\item{data}{}
+\item{info}{if u want all information type "All"}
 }
 \value{
 dataframe

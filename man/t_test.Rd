@@ -7,12 +7,10 @@
 t_test(y1, y2)
 }
 \arguments{
-\item{y1}{}
-
 \item{y2}{}
 }
 \value{
-a dataframe of pooled variance and value of test_statistics 
+a dataframe of pooled variance and value of test_statistics
 for given two treatments vector
 }
 \description{
