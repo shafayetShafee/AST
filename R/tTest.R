@@ -20,13 +20,13 @@
 
 t_test = function(y1,y2){
   n1=length(y1)
-  n2= length(n2)
+  n2= length(y2)
   s1_sq = (sum(y1^2)- n1*((mean(y1)^2))) / (n1-1)
   s4_sq = (sum(y2^2)- n2*((mean(y2)^2))) / (n2-1)
 
   s_pooled = (((n1-1)*s1_sq) + ((n2-1)*s4_sq)) / (n1+n2-2)
 
-  t_stat = (mean(y1) - mean(y2))/ sqrt(s_pooled*(2/n))
+  t_stat = (mean(y1) - mean(y2))/ sqrt(s_pooled*((1/n1)+(1/n2)))
   p = t(data.frame("pooled_s"=s_pooled,
                    "test_statistics"=t_stat
   ))
